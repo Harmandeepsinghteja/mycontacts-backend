@@ -1,7 +1,11 @@
 const express = require("express");
 const errorHandler = require("./middleware/errorHandler.js");
+const { connect } = require("mongoose");
+const connectDB = require("./config/dbConnection.js");
 const env = require("dotenv").config();
 const app = express();
+
+connectDB();
 
 const port = process.env.PORT || 5000;
 
